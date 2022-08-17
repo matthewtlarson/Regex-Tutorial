@@ -31,17 +31,27 @@ Quanitifiers are used to represent how often a specific character must be found 
 
 ### Grouping Constructs
 
-
+This is one of the more straight forward concepts of regexes; the () is used to group the entire expression together. Rather than each character standing alone, utilizing the () ensures that the expression is seen as one, and cannot be picked apart. The characters found outside the (), are used as paramters to mark the beginning and the end of the regex.
 
 ### Bracket Expressions
 
+Similar to how the () are utilized, bracket expressions are used to group a specific pattern of characters. As seen in our code snippet, hyphens are used to signify a range. For example, a-f is meant to distinguish any characters between those two letters. Whereas 0-9 is used to indicate any number between that parameter. When these two paramters are grouped within aa single bracket expression, our regex is looking to match only characters that follow the set of rules placed within this brackets. Also, how we see three different sets of hard brackets, those are three completely unrelated set of rules in which our hex values may match. 
+
 ### Character Classes
+
+Characters classes work to define a range of characters that are meant to match the hex value. In this case, 0-9 includes any numbers that fall specifically into that range. This concept works similarly with letters, where in the snippet above a-f stands for any characters that fall inbetween that set parameter. 
 
 ### The OR Operator
 
+The OR operator is used between expressions to signify a match that may happen in one set, OR another. The character | is used to seperate an expression with another, and works to look for values that match either side of the |. In our case, we have [a-f0-9]{6}|[a-f0-9]{3}, where on the left of | is one set of rules a match may be classified by, and on the right is a different set of values in which a match may be classified. 
+
 ### Flags
 
+Flags (i, g, s, m, u) are optional parameters to a regex that modifies its behavior of searching. Although our snippet does not contain flags, a fleg is classified using a single lowercase alphabetic letter and each flag has its own meaning and purpose. 
+
 ### Character Escapes
+
+Character escapes such as a backslash, /, are used to escape certain letters that represent common character classes. 
 
 ## Author
 
